@@ -54,9 +54,9 @@ install:
 	sudo mkdir -p $(INCLUDE_DIR)
 	sudo cp include/*.h $(INCLUDE_DIR)
 
-compile-demo:
-	$(CC) $(CFLAGS) $(DEMO_SRC) -o demo.o -l$(TARGET)
+compile-test:
+	$(CC) $(CFLAGS) $(DEMO_SRC) -o $(TEST_TARGET) -l$(TARGET)
 
-demo: $(TARGET) install compile-demo
-	./demo.o
+test: $(TARGET) install compile-demo
+	./$(TEST_TARGET)
 
