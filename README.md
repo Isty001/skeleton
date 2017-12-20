@@ -3,7 +3,7 @@ Some very basic project skeletons.
 
 #### Libraries
 
-```
+```bash
 cp -R ./skeleton/lib ~/projects/my_fanyc_lib
 cd ~/projects/my_fanyc_lib
 make project-init # to remove unnecessary .gitkeeps
@@ -14,7 +14,7 @@ Build task will create `libfoo.so.(MAJOR).(MINOR).(PATCH)` with `libfoo.so.(MAJO
 
 The install already has a basic versioning, something like this:
 
-```
+```bash
 /usr/local/lib/libfoo.so -> /usr/local/lib/libfoo.so.(MAJOR)
 /usr/local/lib/libfoo.so.(MAJOR) -> /usr/local/lib/libfoo.so.(MAJOR).(MINOR).(PATCH)
 /usr/local/lib/libfoo.so.(MAJOR).(MINOR).(PATCH)
