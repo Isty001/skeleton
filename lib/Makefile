@@ -3,7 +3,7 @@ CFLAGS += -std=c99 -g -Wall -Wextra -ftrapv -Wshadow -Wundef -Wcast-align -Wunre
 
 
 SRC = $(shell find src -name "*.c")
-DEMO_SRC = $(shell find test -name "*.c")
+TEST_SRC = $(shell find test -name "*.c")
 
 TARGET = 
 TEST_TARGET = $(TARGET)-test
@@ -22,8 +22,10 @@ LIB_DIR = /usr/local/lib
 DIR_BUILD=./build
 
 OBJECTS = $(patsubst %.c, $(DIR_BUILD)/%.o, $(SRC))
-TEST_OBJECTS = $(patsubst %.c, $(DIR_BUILD)/%.o, $(DEMO_SRC))
+TEST_OBJECTS = $(patsubst %.c, $(DIR_BUILD)/%.o, $(TEST_SRC))
 
+
+default: $(TARGET)
 
 -include $(shell find $(DIR_BUILD) -name "*.d")
 
@@ -55,8 +57,8 @@ install:
 	sudo cp include/*.h $(INCLUDE_DIR)
 
 compile-test:
-	$(CC) $(CFLAGS) $(DEMO_SRC) -o $(TEST_TARGET) -l$(TARGET)
+	$(CC) $(CFLAGS) $(TEST_SRC) -o $(TEST_TARGET) -l$(TARGET)
 
-test: $(TARGET) install compile-demo
+test: $(TARGET) install compile-test
 	./$(TEST_TARGET)
 
