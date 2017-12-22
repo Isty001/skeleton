@@ -1,6 +1,6 @@
 DEPS = 
 CFLAGS += -std=c99 -g -Wall -Wextra -ftrapv -Wshadow -Wundef -Wcast-align -Wunreachable-code -fstack-protector -O1
-
+CFLAGS += -I .
 
 SRC = $(shell find src -name "*.c")
 TEST_SRC = $(shell find test -name "*.c")
