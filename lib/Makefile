@@ -50,7 +50,7 @@ project-init:
 clean:
 	rm -rf $(DIR_BUILD)/*
 
-install:
+install: $(TARGET)
 	sudo mv $(FULL_NAME) $(LIB_DIR)
 	ln -sf $(LIB_DIR)/$(FULL_NAME) $(LIB_DIR)/$(SONAME)
 	ln -sf $(LIB_DIR)/$(SONAME) $(LIB_DIR)/$(LIB_OBJ)
