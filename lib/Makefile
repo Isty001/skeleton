@@ -15,7 +15,8 @@ VERSION_PATCH = 0
 
 LIB_OBJ = lib$(TARGET).so
 SONAME = $(LIB_OBJ).$(VERSION_MAJOR)
-FULL_NAME = $(SONAME).$(VERSION_MINOR).$(VERSION_PATCH)
+MINOR_NAME = $(SONAME).$(VERSION_MINOR)
+FULL_NAME = $(MINOR_NAME).$(VERSION_PATCH)
 
 INCLUDE_DIR = /usr/local/include/$(TARGET)
 LIB_DIR = /usr/local/lib
@@ -52,7 +53,8 @@ clean:
 
 install: $(TARGET)
 	sudo mv $(FULL_NAME) $(LIB_DIR)
-	ln -sf $(LIB_DIR)/$(FULL_NAME) $(LIB_DIR)/$(SONAME)
+	ln -sf $(LIB_DIR)/$(FULL_NAME) $(LIB_DIR)/$(MINOR_NAME)
+	ln -sf $(LIB_DIR)/$(MINOR_NAME) $(LIB_DIR)/$(SONAME)
 	ln -sf $(LIB_DIR)/$(SONAME) $(LIB_DIR)/$(LIB_OBJ)
 	sudo mkdir -p $(INCLUDE_DIR)
 	sudo cp include/*.h $(INCLUDE_DIR)
