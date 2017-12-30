@@ -16,7 +16,8 @@ The install already has a basic versioning, something like this:
 
 ```bash
 /usr/local/lib/libfoo.so -> /usr/local/lib/libfoo.so.(MAJOR)
-/usr/local/lib/libfoo.so.(MAJOR) -> /usr/local/lib/libfoo.so.(MAJOR).(MINOR).(PATCH)
+/usr/local/lib/libfoo.so.(MAJOR) -> /usr/local/lib/libfoo.so.(MAJOR).(MINOR)
+/usr/local/lib/libfoo.so.(MAJOR).(MINOR) -> /usr/local/lib/libfoo.so.(MAJOR).(MINOR).(PATCH)
 /usr/local/lib/libfoo.so.(MAJOR).(MINOR).(PATCH)
 ```
 
