@@ -39,7 +39,7 @@ $(DIR_BUILD)/%.o: %.c
 .PRECIOUS: $(TARGET) $(OBJECTS)
 
 
-$(TARGET): clean $(OBJECTS)
+$(TARGET): $(OBJECTS)
 	$(CC) -shared -fpic -Wl,-soname,$(SONAME) -o $(FULL_NAME) $(OBJECTS) $(DEPS)
 
 $(TEST_TARGET): $(TEST_OBJECTS)
