@@ -60,7 +60,7 @@ install: $(TARGET)
 	sudo cp include/*.h $(INCLUDE_DIR)
 
 compile-test:
-	$(CC) $(CFLAGS) $(TEST_SRC) -o $(TEST_TARGET) -l$(TARGET)
+	$(CC) $(TEST_CFLAGS) $(TEST_SRC) -o $(TEST_TARGET) -l$(TARGET)
 
 test: $(TARGET) install compile-test
 	./$(TEST_TARGET)
