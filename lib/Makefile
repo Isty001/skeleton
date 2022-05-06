@@ -4,7 +4,7 @@ CFLAGS += -O1 -Os
 CFLAGS += -I .
 
 SRC = $(shell find src -name "*.c")
-TEST_SRC = $(shell find test -name "*.c")
+TEST_SRC = $(shell find test -name "*.c") $(SRC)
 
 TARGET = 
 TEST_TARGET = $(TARGET)-test
