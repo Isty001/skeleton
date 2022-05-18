@@ -7,7 +7,7 @@ CFLAGS += -I .
 SRC = $(shell find src -name "*.c")
 TEST_SRC = $(shell find test -name "*.c") $(SRC)
 
-TARGET = vertigo
+TARGET = 
 TEST_TARGET = $(TARGET)-test
 
 INCLUDE_DIR = /usr/local/include/$(TARGET)
