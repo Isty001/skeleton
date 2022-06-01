@@ -3,6 +3,8 @@
 tags
 .ycm_extra_conf.py
 
+.ccls-cache/
+
 build/
 !build/.gitkeep
 
